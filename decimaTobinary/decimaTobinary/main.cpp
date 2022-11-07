@@ -44,9 +44,6 @@ void main()
 
 	/*
 	case 1 = 10진수 정수를 2진수로 변환하기
-
-	10진수에서 2진수로 전환할때에는 bitset을 사용하면 된다.
-	그치만 직접도 해보자
 	*/
 
 	// bitset 사용방식
@@ -80,6 +77,19 @@ void main()
 	/*
 	case 3 = 2진수를 10진수로 변환하기
 	*/
+
+	// bitset 사용방식
+	// bitset 객체에 넣고 to_ulong() 하면 끝
+	int num1 = 10;
+	int num2 = 15;
+
+	bitset<32> b1(num1);  // b1 = 1010
+	bitset<32> b2(num2);  // b2 = 1111
+
+	cout << b1 << endl; // 출력시 000000.....1010
+	cout << b1.to_ulong() << endl; // 출력시 10진수 10
+	
+	// 직접 구현 방식
 	result = 0;
 	int bit = 100; // 2진수 100이니 10진수로 4
 	for (int j = 0; bit >= 1; j++) {
