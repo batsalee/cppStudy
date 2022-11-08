@@ -2,6 +2,10 @@
 
 int main()
 {
-	std::cout << "Hello, World!!" << std::endl;
+	int num;
+
+	std::cin >> num;
+
+	std::cout << "num : " << num << std::endl;
 	return 0;
 }
