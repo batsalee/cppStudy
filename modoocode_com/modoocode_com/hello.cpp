@@ -2,12 +2,15 @@
 
 int main()
 {
-	int num = 10;
-	int& another_num = num;
-
-	std::cout << "num : " << num << std::endl;
-	another_num = 15;
-	std::cout << "num : " << num << std::endl;
+	int* num = new int[10];
+	
+	for (int i=0; i<10; i++)
+	{
+		num[i] = i;
+		std::cout << num[i];
+	}
+	
+	delete[] num;
 
 	return 0;
 }
