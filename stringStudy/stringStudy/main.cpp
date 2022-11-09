@@ -1,19 +1,53 @@
 #include <iostream>
 #include <string>
 
-int main() {
-    std::string s = "abc";
-    std::string t = "def";
-    std::string s2 = s;
+class Base 
+{
+private:
+	std::string s;
 
-    std::cout << s << " 의 길이 : " << s.length() << std::endl;
-    std::cout << s << " 뒤에 " << t << " 를 붙이면 : " << s + t << std::endl;
+public:
+	Base()
+	: s("기반")
+	{
+		std::cout << "기반 클래스" << std::endl;
+	}
 
-    if (s == s2) {
-        std::cout << s << " 와 " << s2 << " 는 같다 " << std::endl;
-    }
-    if (s != t) {
-        std::cout << s << " 와 " << t << " 는 다르다 " << std::endl;
-    }
-    return 0;
+	void what()
+	{
+		std::cout << s << std::endl;
+	}
+};
+
+class Derived : public Base
+{
+private:
+	std::string s;
+
+public:
+	Derived()
+	: Base(), s("파생") 
+	{
+		std::cout << "파생 클래스" << std::endl;
+
+		// Base 에서 what() 을 물려 받았으므로
+		// Derived 에서 당연히 호출 가능하다
+		what();
+	}
+
+	void what()
+	{
+		std::cout << s << std::endl;
+	}
+};
+
+int main() 
+{
+	std::cout << " === 기반 클래스 생성 ===" << std::endl;
+	Base p;
+
+	std::cout << " === 파생 클래스 생성 ===" << std::endl;
+	Derived c;
+
+	return 0;
 }
