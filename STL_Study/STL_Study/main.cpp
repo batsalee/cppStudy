@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <deque>
 
 int main() {
+    /*
     // vector 사용해보기
     std::cout << "vector 사용해보기" << std::endl;
     std::vector<int> vec;
@@ -45,4 +47,30 @@ int main() {
         std::cout << *itr << ' ';
     }
     std::cout << std::endl;
+    */
+    // Deque에 insert erase 사용해보기
+    std::deque<int> dq;
+    dq.push_back(10);
+    dq.push_back(20);
+    dq.push_back(30);
+    dq.push_back(40);
+
+    for (auto itr = dq.begin(); itr != dq.end(); itr++) {
+        std::cout << *itr << ' ';
+    }
+    std::cout << std::endl;
+
+    dq.insert(dq.begin() + 1, 15);
+    for (auto itr = dq.begin(); itr != dq.end(); itr++) {
+        std::cout << *itr << ' ';
+    }
+    std::cout << std::endl;
+
+    dq.erase(dq.begin() + 1);
+    for (auto itr = dq.begin(); itr != dq.end(); itr++) {
+        std::cout << *itr << ' ';
+    }
+    std::cout << std::endl;
+    // 그냥 다 벡터랑 똑같이 쓸 수 있음
+    // 다만 front도 사용 가능하고 속도는 좀 더 빠르지만 메모리를 더 먹는다.
 }
