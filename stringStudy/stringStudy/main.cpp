@@ -1,19 +1,11 @@
-// 파일에서의 입출력
-#include <fstream>
 #include <iostream>
-#include <string>
+
+template <typename... Ints>
+int sum_all(Ints... nums) {
+	return (... + nums);
+}
 
 int main() {
-    // 파일 읽기 준비
-    std::ifstream in("test.txt");
-    std::string s;
-
-    if (in.is_open()) {
-        in >> s;
-        std::cout << "입력 받은 문자열 :: " << s << std::endl;
-    }
-    else {
-        std::cout << "파일을 찾을 수 없습니다!" << std::endl;
-    }
-    return 0;
+	// 1 + 4 + 2 + 3 + 10
+	std::cout << sum_all(1, 4, 2, 3, 10) << std::endl;
 }
