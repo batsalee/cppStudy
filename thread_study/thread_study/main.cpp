@@ -27,4 +27,5 @@ int main() {
     t1.join();
     t2.join();
     t3.join();
+    // 쓰레드 다른 속성들 다 적용해보기
 }
