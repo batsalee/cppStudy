@@ -24,8 +24,9 @@ int main() {
     thread t2(func2);
     thread t3(func3);
 
-    t1.join();
-    t2.join();
-    t3.join();
-    // 쓰레드 다른 속성들 다 적용해보기
+    t1.detach();
+    t2.detach();
+    t3.detach();
+
+    std::cout << "메인 함수 종료 \n";
 }
