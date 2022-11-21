@@ -1,31 +1,20 @@
-#include <vector>
 #include <iostream>
 
-using namespace std;
+class A {
+    int data_;
 
-void main()
-{
-    int n = 3;
-    int array[3][3];
+public:
+    A(int data) : data_(data) { std::cout << "일반 생성자 호출!" << std::endl; }
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            array[i][j] = (i > j) ? i + 1 : j + 1;
-        }
+    A(const A& a) : data_(a.data_) {
+        std::cout << "복사 생성자 호출!" << std::endl;
     }
+};
 
-    // 출력파트
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            cout << array[i][j]<< ' ';
-        }
-        cout << endl;
-    }
+int main() {
+    A a(1);  // 일반 생성자 호출
+    A b(a);  // 복사 생성자 호출
 
-    int* array_ptr = &(array[0][0]);
-    cout << endl << *(array_ptr+5);
+    // 그렇다면 이것은?
+    A c(A(2));
 }
