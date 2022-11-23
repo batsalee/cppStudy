@@ -16,6 +16,9 @@ public:
     // 복사 생성자
     MyString(const MyString& str);
 
+    // 이동 생성자
+    MyString(MyString&& str);
+
     void reserve(int size);
     MyString operator+(const MyString& s);
     ~MyString();
@@ -50,7 +53,19 @@ MyString::MyString(const MyString& str) {
     for (int i = 0; i != string_length; i++)
         string_content[i] = str.string_content[i];
 }
-MyString::~MyString() { delete[] string_content; }
+MyString::MyString(MyString&& str) {
+    std::cout << "이동 생성자 호출 !" << std::endl;
+    string_length = str.string_length;
+    string_content = str.string_content;
+    memory_capacity = str.memory_capacity;
+
+    // 임시 객체 소멸 시에 메모리를 해제하지
+    // 못하게 한다.
+    str.string_content = nullptr;
+}
+MyString::~MyString() {
+    if (string_content) delete[] string_content;
+}
 void MyString::reserve(int size) {
     if (size > memory_capacity) {
         char* prev_string_content = string_content;
@@ -87,6 +102,7 @@ void MyString::println() {
 int main() {
     MyString str1("abc");
     MyString str2("def");
+
     std::cout << "-------------" << std::endl;
     MyString str3 = str1 + str2;
     str3.println();
