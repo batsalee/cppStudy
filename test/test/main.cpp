@@ -1,20 +1,19 @@
 #include <iostream>
 
-class A {
-    int data_;
-
-public:
-    A(int data) : data_(data) { std::cout << "일반 생성자 호출!" << std::endl; }
-
-    A(const A& a) : data_(a.data_) {
-        std::cout << "복사 생성자 호출!" << std::endl;
-    }
+template <int N>
+struct A {
+	int operator()() { return N; }
 };
 
 int main() {
-    A a(1);  // 일반 생성자 호출
-    A b(a);  // 복사 생성자 호출
+	constexpr int size = 3;
+	int arr[size];  // Good!
 
-    // 그렇다면 이것은?
-    A c(A(2));
+	constexpr int N = 10;
+	A<N> a;  // Good!
+	std::cout << a() << std::endl;
+
+	constexpr int number = 3;
+	enum B { x = number, y, z };  // Good!
+	std::cout << B::x << std::endl;
 }
