@@ -18,36 +18,42 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="numericProperty.cpp">
+    <ClCompile Include="bubbleSort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="stringProperty.cpp">
+    <ClCompile Include="selectionSort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="algorithmProperty.cpp">
+    <ClCompile Include="insertionSort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="stringstreamProperty.cpp">
+    <ClCompile Include="quickSort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="bitsetProperty.cpp">
+    <ClCompile Include="mergeSort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="pair.cpp">
+    <ClCompile Include="heapSort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="numericProperty.h">
+    <ClInclude Include="bubbleSort.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stringProperty.h">
+    <ClInclude Include="selectionSort.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="algorithmProperty.h">
+    <ClInclude Include="insertionSort.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="stringstreamProperty.h">
+    <ClInclude Include="quickSort.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="mergeSort.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="heapSort.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

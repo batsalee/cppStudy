@@ -18,26 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="algorithmProperty.cpp" />
-    <ClCompile Include="bitsetProperty.cpp" />
-    <ClCompile Include="numericProperty.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="pair.cpp" />
-    <ClCompile Include="stringProperty.cpp" />
-    <ClCompile Include="stringstreamProperty.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="algorithmProperty.h" />
-    <ClInclude Include="numericProperty.h" />
-    <ClInclude Include="stringProperty.h" />
-    <ClInclude Include="stringstreamProperty.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{baf86372-54bb-46c1-b057-4b880aa80768}</ProjectGuid>
-    <RootNamespace>test</RootNamespace>
+    <ProjectGuid>{5ef7ab51-d72f-4bf7-a8ca-aa9c39909900}</ProjectGuid>
+    <RootNamespace>algorithmsort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -91,8 +76,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,8 +90,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,8 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,8 +118,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,6 +126,23 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="bubbleSort.cpp" />
+    <ClCompile Include="heapSort.cpp" />
+    <ClCompile Include="insertionSort.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mergeSort.cpp" />
+    <ClCompile Include="quickSort.cpp" />
+    <ClCompile Include="selectionSort.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bubbleSort.h" />
+    <ClInclude Include="heapSort.h" />
+    <ClInclude Include="insertionSort.h" />
+    <ClInclude Include="mergeSort.h" />
+    <ClInclude Include="quickSort.h" />
+    <ClInclude Include="selectionSort.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -1,36 +1,35 @@
-#include <chrono>
-#include <iomanip>
+#include <algorithm>
 #include <iostream>
-#include <random>
 #include <vector>
 
-int main() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
+int containerControl()
+{
+	std::vector<int> array = { 1, 2, 3, 4, 5 };
+	for (int i : array) {
+		std::cout << i << ' ';
+	}
+	std::cout << std::endl;
 
-    std::uniform_int_distribution<> dist(0, 1000);
+	/*
+	뒤집기
+	컨테이너 뿐 아니라 string객체도 잘 뒤집어짐
+	reverse(str.begin(), str.end());
+	*/
+	std::reverse(array.begin(), array.end());
+	for (int i : array) {
+		std::cout << i << ' ';
+	}
+	std::cout << std::endl;
 
-    for (int total = 1; total <= 1000000; total *= 10) {
-        std::vector<int> random_numbers;
-        random_numbers.reserve(total);
+	/*
+	회전시키기
+	rotate(시작반복자, 첫위치로 올 반복자, 종료반복자)
+	begin()+1 즉 두번째 자리가 첫위치로 간다는건 왼쪽으로 한칸씩 이동한다는 뜻이므로
+	*/
+	// 한칸씩 왼쪽 이동
+	std::rotate(array.begin(), array.begin() + 1, array.end()); 
+	// 한칸씩 오른쪽 이동
+	std::rotate(array.begin(), array.end() - 1, array.end()); 
 
-        std::chrono::time_point<std::chrono::high_resolution_clock> start =
-            std::chrono::high_resolution_clock::now();
-
-        for (int i = 0; i < total; i++) {
-            random_numbers.push_back(dist(gen));
-        }
-
-        std::chrono::time_point<std::chrono::high_resolution_clock> end =
-            std::chrono::high_resolution_clock::now();
-
-        // C++ 17 이전
-        auto diff = end - start;
-
-        // C++ 17 이후
-        // std::chrono::duration diff = end - start; 
-
-        std::cout << std::setw(7) << total
-            << "개 난수 생성 시 틱 횟수 : " << diff.count() << std::endl;
-    }
+	return 0;
 }
