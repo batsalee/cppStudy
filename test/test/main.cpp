@@ -1,18 +1,15 @@
-#include "numericProperty.h"
-#include "stringProperty.h"
-#include "algorithmProperty.h"
-#include "stringstreamProperty.h"
-#include <algorithm>
 #include <iostream>
 #include <vector>
 
 int main() 
 {
-	std::vector<int> array = { 1, 2, 3, 4, 5 };
-	for (int i : array) {
-		std::cout << i << ' ';
-	}
+	std::ios::sync_with_stdio(false);
+	std::cin.tie(NULL);
 
+	int x1, y1, x2, y2;
+	std::cin >> x1 >> y1 >> x2 >> y2;
+
+	std::cout << sqrt( pow(x2 - x1, 2) + pow(y2 - y1, 2) );	
 
 	return 0;
 }
